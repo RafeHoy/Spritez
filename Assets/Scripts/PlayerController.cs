@@ -29,9 +29,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         elapsedTime += Time.deltaTime;
-        Debug.Log(elapsedTime);
+        //Debug.Log(elapsedTime);
         score = Mathf.FloorToInt(elapsedTime * scoreMultiplier);
-        Debug.Log(score);
+        //Debug.Log(score);
         scoreText.text = "Score: " + score;
 
 

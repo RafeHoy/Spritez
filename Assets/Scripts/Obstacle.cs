@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour
@@ -15,6 +16,17 @@ public class Obstacle : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Updateguys();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    private void Updateguys()
+    {
         float randomSize = Random.Range(minSize, maxSize);
         transform.localScale = new Vector3(randomSize, randomSize, 1);
 
@@ -28,10 +40,8 @@ public class Obstacle : MonoBehaviour
         float randomTorque = Random.Range(-maxSpinSpeed, maxSpinSpeed);
         rb.AddTorque(randomTorque);
     }
-
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-
+        Updateguys();
     }
 }
